@@ -49,7 +49,7 @@
                 const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}&zoom=18&addressdetails=1`);
                 const data = await response.json();
                 address = data.display_name || "Không tìm thấy địa chỉ";
-                locationText.textContent = `Vị trí: ${address}`;
+                locationText.textContent = `Vị trí: ${address} | lat: ${lat} - lng: ${lon}` ;
             } catch (error) {
                 console.error("Lỗi lấy địa chỉ:", error);
                 address = "Lỗi lấy địa chỉ";
